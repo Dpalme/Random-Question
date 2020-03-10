@@ -26,27 +26,21 @@ function create_question(question, extra) {
   questions.push(question);
 }
 
-Question.prototype.toString = function () {
-  return this.question + "\n" + this.extra;
-}
-
-
 function start() {
-  question_number = document.createElement("h4");
-  question_tag = document.createElement("p")
-  question_extra = document.createElement("p");
+  total_questions = document.getElementById("total");
+  question_number = document.getElementById("number");
+  question_tag = document.getElementById("question");
+  question_extra = document.getElementById("extra");
 
-  question_number.innerText = "Number of questions: " + questions.length;
-  document.getElementById("content").appendChild(question_number);
-  document.getElementById("content").appendChild(question_tag);
-  document.getElementById("content").appendChild(question_extra);
+  total_questions.innerText = "Number of questions: " + questions.length;
 }
 
 function new_question() {
   var question = questions[Math.floor(Math.random() * questions.length)];
+  question_number.innerText = "Question number: " + question.get_number();
   question_tag.innerText = question.get_question();
   if (question.get_extra() !== undefined) {
-    question_extra.innerText = question.get_extra();
+    question_extra.innerText = "Extra question(s): " + question.get_extra();
   } else {
     question_extra.innerText = "";
   }

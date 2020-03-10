@@ -21,4 +21,4 @@ with open("js/question_data.js", "w", encoding="UTF-8") as archivo:
     main_question, extra_questions = question.items()
     number, question = main_question
     throwaway, extra = extra_questions
-    archivo.write('create_question(' + str(number) + ', "' + question + '", "' + extra + '");\n')
+    archivo.write('create_question(%d, "%s", "%s");\n' % (number, question, extra))

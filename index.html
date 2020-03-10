@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Random Questions</title>
-    <!link href="css/main.css" rel="stylesheet">
+    <link href="css/peoria.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
     <script src="js/main.js"></script>
     <script src="js/question_data.js"></script>
 </head>
-<body onload="start()" style="background: #121212; color: #eaeaea">
-    <nav>
-        <h1>Random Questions</h1>
-        <button onclick="new_question()">New Question</button>
-    </nav>
-    
-    <div id="content"></div>
+
+<body onload="start()">
+    <div class="container">
+        <div class="column col-margin-bottom">
+            <h1>Random Questions</h1>
+            <h4 id="total" class="gutter-margin-bottom"></h4>
+            <button onclick="new_question()"
+                class="three columns gutter-height">New Question</button>
+            <button onclick="document.querySelector('body').classList.toggle('night');"
+                class="three columns gutter-height u-pull-right">Night Mode</button>
+        </div>
+        <div class="column gutter-margin-top">
+            <h4 id="number" class="four  columns offset-by-four gutter-margin-bottom"></h4>
+            <p id="question" class="twelve columns col-margin-bottom"></p>
+            <p id="extra" class="eight columns small-body"></p>
+        </div>
+    </div>
 </body>
+
 </html>
