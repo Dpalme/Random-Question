@@ -4,7 +4,7 @@
  *
  * Free to use under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 9/3/2020
+ * 10/3/2020
  */
 
 /* Table of contents
@@ -27,7 +27,7 @@
 	- Media Queries
  */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap&subset=latin-ext');
+ @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500&display=swap');
 
 :root {
 	/* Colors
@@ -56,7 +56,7 @@
 
 	/* Fonts
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
-	--font-face: 'Roboto', Arial, Helvetica, sans-serif;
+	--font-face: "Roboto Mono", "Courier New", Courier, monospace;
 
 	/* Grid values
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -130,8 +130,7 @@ h4 {
 	font-weight: 500;
 	font-size: 10px;
 	line-height: 30px;
-	letter-spacing: 5%;
-	color: var(--white); }
+	letter-spacing: 5%; }
 b { color: var(--black); }
 .bold { font-weight: bold; }
 .text-right { text-align: right; }
@@ -183,10 +182,10 @@ footer {
 .button,
 button {
 	text-align: center;
-	background-color: var(--dark-blue);
+	background-color: transparent;
 	border-radius: 3px;
-	color: var(--white) !important;
-	border: none;
+	border: 1px var(--black) solid;
+	padding: 5px;
 }
 
 /* Selection
@@ -215,8 +214,11 @@ button {
 	background: var(--white);
 	box-shadow: 2px 5px 10px #0000002b; }
 .night {
-  background-color: #222;
-  color: #fff; }
+  background-color: #000;
+	color: #fff;
+	--white: #000;
+	--black: #fff;
+}
 .image-cover { object-fit: cover; }
 .relative { position: relative; }
 .gutter-height { height: var(--gutter); }
@@ -297,7 +299,6 @@ button {
 	list-style: none;
 	text-align: center;
 }
-.navButton { animation: grow 10s linear infinite; }
 .social-icons {	bottom: 11%; }
 .social-icons a {	margin: 0 auto; }
 .header-link {
@@ -363,37 +364,36 @@ button {
   .one-half.column                { width: 48%; }
 
   /* Offsets */
-  .offset-by-one.column,
-  .offset-by-one.columns          { margin-left: 8.66666666667%; }
-  .offset-by-two.column,
-  .offset-by-two.columns          { margin-left: 17.3333333333%; }
-  .offset-by-three.column,
-  .offset-by-three.columns        { margin-left: 26%;            }
-  .offset-by-four.column,
-  .offset-by-four.columns         { margin-left: 34.6666666667%; }
-  .offset-by-five.column,
-  .offset-by-five.columns         { margin-left: 43.3333333333%; }
-  .offset-by-six.column,
-  .offset-by-six.columns          { margin-left: 52%;            }
-  .offset-by-seven.column,
-  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
-  .offset-by-eight.column,
-  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
-  .offset-by-nine.column,
-  .offset-by-nine.columns         { margin-left: 78.0%;          }
-  .offset-by-ten.column,
-  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
-  .offset-by-eleven.column,
-  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+  .one-offset.column,
+  .one-offset.columns          { margin-left: 8.66666666667%; }
+  .two-offset.column,
+  .two-offset.columns          { margin-left: 17.3333333333%; }
+  .three-offset.column,
+  .three-offset.columns        { margin-left: 26%;            }
+  .four-offset.column,
+  .four-offset.columns         { margin-left: 34.6666666667%; }
+  .five-offset.column,
+  .five-offset.columns         { margin-left: 43.3333333333%; }
+  .six-offset.column,
+  .six-offset.columns          { margin-left: 52%;            }
+  .seven-offset.column,
+  .seven-offset.columns        { margin-left: 60.6666666667%; }
+  .eight-offset.column,
+  .eight-offset.columns        { margin-left: 69.3333333333%; }
+  .nine-offset.column,
+  .nine-offset.columns         { margin-left: 78.0%;          }
+  .ten-offset.column,
+  .ten-offset.columns          { margin-left: 86.6666666667%; }
+  .eleven-offset.column,
+  .eleven-offset.columns       { margin-left: 95.3333333333%; }
 
-  .offset-by-one-third.column,
-  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
-  .offset-by-two-thirds.column,
-  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+  .one-third-offset.column,
+  .one-third-offset.columns    { margin-left: 34.6666666667%; }
+  .two-thirds-offset.column,
+  .two-thirds-offset.columns   { margin-left: 69.3333333333%; }
 
-  .offset-by-one-half.column,
-	.offset-by-one-half.columns     { margin-left: 52%; }
-
+  .half-offset.column,
+	.half-offset.columns     { margin-left: 52%; }
 }
 
 /* Text
@@ -407,7 +407,6 @@ button {
 	color: var(--blue-secondary);
 	margin: 0;
 }
-.center-text { text-align: center; }
 
 /* Flex
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

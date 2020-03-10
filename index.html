@@ -12,19 +12,20 @@
     <script src="js/question_data.js"></script>
 </head>
 
-<body onload="start()">
+<body onload="start()" class="night">
     <div class="container">
         <div class="column col-margin-bottom">
             <h1>Random Questions</h1>
             <h4 id="total" class="gutter-margin-bottom"></h4>
             <button onclick="new_question()"
-                class="three columns gutter-height">New Question</button>
+                class="three columns gutter-margin-bottom">New Question</button>
             <button onclick="document.querySelector('body').classList.toggle('night');"
-                class="three columns gutter-height u-pull-right">Night Mode</button>
+                class="three columns six-offset gutter-margin-bottom">Night Mode</button>
+            <h6 class="secondary-body text-center">Questions gathered from <i>THE BOOK OF QUESTIONS</i> by Gregory Stock</h6>
         </div>
         <div class="column gutter-margin-top">
-            <h4 id="number" class="four  columns offset-by-four gutter-margin-bottom"></h4>
-            <p id="question" class="twelve columns col-margin-bottom"></p>
+            <h4 id="number" class="text-center gutter-margin-bottom"></h4>
+            <p id="question" class="text-center col-margin-bottom"></p>
             <p id="extra" class="eight columns small-body"></p>
         </div>
     </div>
